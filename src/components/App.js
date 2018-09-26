@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { setAuthedUser } from '../actions/authedUser';
+import { handleInitialData } from '../actions/shared';
 
 class App extends Component {
   componentDidMount() {
-    this.props.dispatch(setAuthedUser('tylermcginnis'));
+    this.props.dispatch(handleInitialData());
   }
 
-  render() {   
+  render() {
     return (
       <div>
         Start Code
