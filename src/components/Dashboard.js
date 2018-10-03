@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux';
 import Tweet from './Tweet';
 
@@ -7,16 +7,15 @@ class Dashboard extends Component {
     const { tweetIds } = this.props;
 
     return (
-      <div>
-        <h1>Tweet IDs:</h1>
-        <ul>
+      <Fragment>
+        <ul className='dashboard-container'>
           {tweetIds.map((id) => (
-            <li key={id}>
+            <li key={id} className='tweet'>
               <Tweet id={id} />
             </li>
           ))}
         </ul>
-      </div>
+      </Fragment>
     )
   }
 }

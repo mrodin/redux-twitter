@@ -6,7 +6,11 @@ class Tweet extends Component {
   render() {
     return (
       <div>
-
+        <ul>
+          <li>{this.props.tweet.name}</li>
+          <li>{this.props.tweet.timestamp}</li>
+          <li>{this.props.tweet.text}</li>
+        </ul>
       </div>
     )
   }

@@ -1,5 +1,38 @@
-body {
+* {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+/* UTILITY CLASSES */
+
+.flex {
+  display: flex;
+}
+
+.flex--center {
+  justify-content: center;
+}
+
+/* APP COMPONENT */
+
+.app-container {
+  background-color: #f7f7f7;
+}
+
+/* DASHBOARD COMPONENT */
+
+.dashboard-container {
+  width: 600px;
+}
+
+.tweet {
+  background-color: #ffffff;
+  border-top: 1px solid #ebebeb;
+  padding: 1rem;
 }

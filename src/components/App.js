@@ -10,7 +10,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='app-container flex flex--center'>
         {this.props.loading === true
           ? null
           : <Dashboard /> }
