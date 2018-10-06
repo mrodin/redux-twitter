@@ -4,13 +4,21 @@ import { formatTweet } from '../utils/helpers';
 
 class Tweet extends Component {
   render() {
+    const { avatar } = this.props.tweet;
+
     return (
-      <div>
-        <ul>
-          <li>{this.props.tweet.name}</li>
-          <li>{this.props.tweet.timestamp}</li>
-          <li>{this.props.tweet.text}</li>
-        </ul>
+
+      <div className='tweet flex'>
+        <div>
+          <img src={avatar} alt="Author's avatar" />
+        </div>
+        {/* <div>
+          <ul>
+            <li>{this.props.tweet.name}</li>
+            <li>{this.props.tweet.timestamp}</li>
+            <li>{this.props.tweet.text}</li>
+          </ul>
+        </div> */}
       </div>
     )
   }
