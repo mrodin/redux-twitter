@@ -19,6 +19,14 @@ ul {
   justify-content: center;
 }
 
+.mt--xs {
+  margin-top: 0.5rem;
+}
+
+.mt--s {
+  margin-top: 1rem;
+}
+
 /* APP COMPONENT */
 
 .app-container {
@@ -45,7 +53,7 @@ ul {
   border-radius: 50%;
 }
 
-.tweet__header {
+.tweet__body {
   padding-left: 1.5rem;
 }
 
