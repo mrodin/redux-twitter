@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { formatTweet } from '../utils/helpers';
+import { formatTweet, formatDate } from '../utils/helpers';
 
 class Tweet extends Component {
   render() {
-    const { avatar } = this.props.tweet;
+    const { name, avatar, timestamp, text } = this.props.tweet;
 
     return (
-
       <div className='tweet flex'>
         <div>
-          <img src={avatar} alt="Author's avatar" />
+          <img src={avatar} className='tweet__avatar' alt="Author's avatar" />
         </div>
-        {/* <div>
+        <div className='tweet__header'>
           <ul>
-            <li>{this.props.tweet.name}</li>
-            <li>{this.props.tweet.timestamp}</li>
-            <li>{this.props.tweet.text}</li>
+            <li className='tweet__username'>{name}</li>
+            <li>{formatDate(timestamp)}</li>
+            <li>{text}</li>
           </ul>
-        </div> */}
+        </div>
       </div>
     )
   }

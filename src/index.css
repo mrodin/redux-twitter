@@ -28,7 +28,7 @@ ul {
 /* DASHBOARD COMPONENT */
 
 .dashboard-container {
-  width: 600px;
+  width: 40rem;
 }
 
 /* TWEET COMPONENT */
@@ -37,4 +37,18 @@ ul {
   background-color: #ffffff;
   border-top: 1px solid #ebebeb;
   padding: 1rem;
+}
+
+.tweet__avatar {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+}
+
+.tweet__header {
+  padding-left: 1.5rem;
+}
+
+.tweet__username {
+  font-weight: bold;
 }
