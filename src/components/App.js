@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared';
 import Dashboard from './Dashboard';
+import LoadingBar from 'react-redux-loading';
 
 class App extends Component {
   componentDidMount() {
@@ -10,11 +11,14 @@ class App extends Component {
 
   render() {
     return (
-      <div className='app-container flex flex--center'>
-        {this.props.loading === true
-          ? null
-          : <Dashboard /> }
-      </div>
+      <Fragment>
+        <LoadingBar />
+        <div className='app-container flex flex--center'>
+          {this.props.loading === true
+            ? null
+            : <Dashboard />}
+        </div>
+      </Fragment>
     )
   }
 }
