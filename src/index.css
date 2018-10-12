@@ -39,18 +39,20 @@ ul {
   width: 40rem;
 }
 
+/* AVATAR COMPONENT */
+
+.avatar {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+}
+
 /* TWEET COMPONENT */
 
 .tweet {
   background-color: #ffffff;
   border-top: 1px solid #ebebeb;
   padding: 1rem;
-}
-
-.tweet__avatar {
-  height: 4rem;
-  width: 4rem;
-  border-radius: 50%;
 }
 
 .tweet__body {
@@ -64,4 +66,16 @@ ul {
 .tweet__button {
   background: transparent;
   border: none;
+}
+
+.tweet__button:focus {
+  outline: 0;
+}
+
+/* NEW TWEET COMPONENT */
+
+.new-tweet {
+  background-color: #e3f4fc;
+  border-top: 1px solid #ebebeb;
+  padding: 1rem;
 }

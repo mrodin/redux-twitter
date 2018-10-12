@@ -1,14 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Avatar from './Avatar';
+import { MdFavorite, MdFavoriteBorder, MdReply } from 'react-icons/md';
 import { connect } from 'react-redux';
 import { formatTweet, formatDate } from '../utils/helpers';
-import { MdFavorite, MdFavoriteBorder, MdReply } from 'react-icons/md';
 import { handleToggleLike } from '../actions/tweets';
 
-class Tweet extends Component {
-  handleLike = (e) => {
+const Tweet = (props) => {
+  const { name, avatar, timestamp, text, hasLiked } = props.tweet;
+  
+  const handleLike = (e) => {
     e.preventDefault();
 
-    const { dispatch, tweet, authedUser } = this.props;
+    const { dispatch, tweet, authedUser } = props;
 
     dispatch(handleToggleLike({
       id: tweet.id,
@@ -17,32 +20,26 @@ class Tweet extends Component {
     }));
   }
 
-  render() {
-    const { name, avatar, timestamp, text, hasLiked } = this.props.tweet;
-
-    return (
-      <div className='tweet flex'>
-        <div>
-          <img src={avatar} className='tweet__avatar' alt="Author's avatar" />
-        </div>
-        <div className='tweet__body'>
-          <ul>
-            <li className='tweet__username'>{name}</li>
-            <li>{formatDate(timestamp)}</li>
-          </ul>
-          <div className='mt--xs'>{text}</div>
-          <div className='mt--s'>
-            <button className='tweet__button' onClick={this.handleLike}>
-              {hasLiked
-                ? <MdFavorite style={tweet__icon} color='#eaa0a2' />
-                : <MdFavoriteBorder style={tweet__icon} color='#aaaaaa' />}
-            </button>
-            <MdReply style={tweet__icon} color='#aaaaaa' />
-          </div>
+  return (
+    <div className='tweet flex'>
+      <Avatar avatarUrl={avatar}/>
+      <div className='tweet__body'>
+        <ul>
+          <li className='tweet__username'>{name}</li>
+          <li>{formatDate(timestamp)}</li>
+        </ul>
+        <div className='mt--xs'>{text}</div>
+        <div className='mt--s'>
+          <button className='tweet__button' onClick={handleLike}>
+            {hasLiked
+              ? <MdFavorite style={tweet__icon} color='#eaa0a2' />
+              : <MdFavoriteBorder style={tweet__icon} color='#aaaaaa' />}
+          </button>
+          <MdReply style={tweet__icon} color='#aaaaaa' />
         </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 function mapStateToProps({ authedUser, users, tweets }, { id }) {

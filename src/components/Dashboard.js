@@ -1,23 +1,23 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux';
+import NewTweet from './NewTweet';
 import Tweet from './Tweet';
 
-class Dashboard extends Component {
-  render() {
-    const { tweetIds } = this.props;
+const Dashboard = (props) => {
+  const { tweetIds } = props;
 
-    return (
-      <div className='dashboard-container'>
-        <ul>
-          {tweetIds.map((id) => (
-            <li key={id}>
-              <Tweet id={id} />
-            </li>
-          ))}
-        </ul>
-      </div>
-    )
-  }
+  return (
+    <div className='dashboard-container'>
+      <NewTweet />
+      <ul>
+        {tweetIds.map((id) => (
+          <li key={id}>
+            <Tweet id={id} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
 }
 
 function mapStateToProps({ tweets }) {
