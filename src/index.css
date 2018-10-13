@@ -79,3 +79,7 @@ ul {
   border-top: 1px solid #ebebeb;
   padding: 1rem;
 }
+
+.new-tweet__textbox {
+  margin-left: 1.5rem;
+}

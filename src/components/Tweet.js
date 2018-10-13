@@ -7,7 +7,7 @@ import { handleToggleLike } from '../actions/tweets';
 
 const Tweet = (props) => {
   const { name, avatar, timestamp, text, hasLiked } = props.tweet;
-  
+
   const handleLike = (e) => {
     e.preventDefault();
 
@@ -22,7 +22,7 @@ const Tweet = (props) => {
 
   return (
     <div className='tweet flex'>
-      <Avatar avatarUrl={avatar}/>
+      <Avatar avatarUrl={avatar} />
       <div className='tweet__body'>
         <ul>
           <li className='tweet__username'>{name}</li>
