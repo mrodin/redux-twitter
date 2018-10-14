@@ -8,9 +8,7 @@ const NewTweet = (props) => {
   return (
     <div className='new-tweet flex'>
       <Avatar avatarUrl={avatar} />
-      <textarea rows='2' placeholder="What's up?" className='new-tweet__textbox'>
-
-      </textarea>
+      <textarea rows='1' placeholder="What's up?" className='new-tweet__textbox' />
     </div>
   )
 }

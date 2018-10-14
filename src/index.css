@@ -42,8 +42,8 @@ ul {
 /* AVATAR COMPONENT */
 
 .avatar {
-  height: 4rem;
-  width: 4rem;
+  height: 3.5rem;
+  width: 3.5rem;
   border-radius: 50%;
 }
 
@@ -82,4 +82,10 @@ ul {
 
 .new-tweet__textbox {
   margin-left: 1.5rem;
+  resize: none;
+  border: 1px solid #72bcd4;
+  border-radius: 4px;
+  height: 2.5rem;
+  width: 100%;
+  padding: 0.5rem;
 }
