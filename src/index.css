@@ -15,6 +15,10 @@ ul {
   display: flex;
 }
 
+.flex--column {
+  flex-direction: column;
+}
+
 .flex--center {
   justify-content: center;
 }
@@ -88,4 +92,15 @@ ul {
   height: 2.5rem;
   width: 100%;
   padding: 0.5rem;
+}
+
+.new-tweet__button {
+  width: 5rem;
+  align-self: flex-end;
+  color: #fff;
+  font-weight: bold;
+  background: #089de3;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 20px;
 }

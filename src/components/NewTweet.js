@@ -6,9 +6,12 @@ const NewTweet = (props) => {
   const { avatar } = props;
 
   return (
-    <div className='new-tweet flex'>
-      <Avatar avatarUrl={avatar} />
-      <textarea rows='1' placeholder="What's up?" className='new-tweet__textbox' />
+    <div className='new-tweet flex flex--column'>
+      <div className='flex'>
+        <Avatar avatarUrl={avatar} />
+        <textarea rows='1' placeholder="What's up?" className='new-tweet__textbox' />
+      </div>
+      <button className='new-tweet__button'>Tweet</button>
     </div>
   )
 }
