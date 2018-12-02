@@ -8,8 +8,12 @@ export class NewTweet extends Component {
     tweetText: ''
   }
 
-  handleChange = input => e => {
-    this.setState({ [input]: e.target.value });
+  handleInputChange = (e) => {
+    const { value, name } = e.target;
+
+    this.setState(() => ({
+      [name]: value
+    }))
   }
 
   handleTweet = e => {
@@ -18,21 +22,24 @@ export class NewTweet extends Component {
   }
 
   render() {
+    const { tweetText } = this.state;
     const { avatar } = this.props;
 
     return (
-      <div className='new-tweet flex flex--column'>
+      <form className='new-tweet flex flex--column' onSubmit={this.handleTweet}>
         <div className='flex'>
           <Avatar avatarUrl={avatar} />
-          <textarea
-            rows='1'
+          <input
+            value={tweetText}
+            name='tweetText'
             placeholder="What's up?"
             className='new-tweet__textbox'
-            onChange={this.handleChange('tweetText')}
+            onChange={this.handleInputChange}
+            type='text'
           />
         </div>
-        <button className='new-tweet__button'>Tweet</button>
-      </div>
+        <button type='submit' className='new-tweet__button'>Tweet</button>
+      </form>
     )
   }
 }

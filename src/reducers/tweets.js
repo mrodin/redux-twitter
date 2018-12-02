@@ -1,4 +1,8 @@
-import { RECEIVE_TWEETS, TOGGLE_LIKE } from '../actions/tweets';
+import {
+  RECEIVE_TWEETS,
+  ADD_TWEET,
+  TOGGLE_LIKE
+} from '../actions/tweets';
 
 export default function tweets(state = {}, action) {
   switch (action.type) {
@@ -6,6 +10,11 @@ export default function tweets(state = {}, action) {
       return {
         ...state,
         ...action.tweets
+      }
+    case ADD_TWEET:
+      return {
+        ...state,
+        [action.tweet.id]: action.tweet
       }
     case TOGGLE_LIKE:
       const { id, hasLiked, authedUser } = action;
