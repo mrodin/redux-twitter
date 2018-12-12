@@ -238,8 +238,8 @@ function generateUID () {
 
 function formatTweet ({ author, text, replyingTo = null }) {
   return {
-    author,
     id: generateUID(),
+    author,
     likes: [],
     replies: [],
     text,
@@ -251,8 +251,8 @@ function formatTweet ({ author, text, replyingTo = null }) {
 export function _saveTweet ({ text, author, replyingTo }) {
   return new Promise((res, rej) => {
     const formattedTweet = formatTweet({
-      text,
       author,
+      text,
       replyingTo
     })
 

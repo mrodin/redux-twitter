@@ -5,7 +5,7 @@ import { handleAddTweet } from '../actions/tweets';
 
 export class NewTweet extends Component {
   state = {
-    tweetText: ''
+    text: ''
   }
 
   handleInputChange = (e) => {
@@ -18,11 +18,19 @@ export class NewTweet extends Component {
 
   handleTweet = e => {
     e.preventDefault();
-    this.props.dispatch(handleAddTweet());
+
+    const { text } = this.state;
+    const { dispatch, id } = this.props;
+
+    dispatch(handleAddTweet(text, id));
+
+    this.setState(() => ({
+      text: ''
+    }));
   }
 
   render() {
-    const { tweetText } = this.state;
+    const { text } = this.state;
     const { avatar } = this.props;
 
     return (
@@ -30,8 +38,8 @@ export class NewTweet extends Component {
         <div className='flex'>
           <Avatar avatarUrl={avatar} />
           <input
-            value={tweetText}
-            name='tweetText'
+            value={text}
+            name='text'
             placeholder="What's up?"
             className='new-tweet__textbox'
             onChange={this.handleInputChange}
