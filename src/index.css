@@ -84,14 +84,24 @@ ul {
   padding: 1rem;
 }
 
-.new-tweet__textbox {
+.new-tweet__container {
   margin-left: 1.5rem;
+  width: 100%;
+}
+
+.new-tweet__textbox {
   resize: none;
   border: 1px solid #72bcd4;
   border-radius: 4px;
   height: 2.5rem;
   width: 100%;
   padding: 0.5rem;
+}
+
+.new-tweet__counter {
+  align-self: flex-end;
+  font-size: 11px;
+  color: #666666;
 }
 
 .new-tweet__button {

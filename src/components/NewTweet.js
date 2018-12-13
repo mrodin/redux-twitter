@@ -5,15 +5,21 @@ import { handleAddTweet } from '../actions/tweets';
 
 export class NewTweet extends Component {
   state = {
-    text: ''
+    text: '',
+    charCount: 0
   }
 
   handleInputChange = (e) => {
-    const { value, name } = e.target;
+    const { value } = e.target;
+    const charCount = value.length;
+    const charLimit = 280;
 
-    this.setState(() => ({
-      [name]: value
-    }))
+    if (charCount <= charLimit) {
+      this.setState(() => ({
+        text: value,
+        charCount: charCount
+      }))
+    }
   }
 
   handleTweet = e => {
@@ -30,23 +36,26 @@ export class NewTweet extends Component {
   }
 
   render() {
-    const { text } = this.state;
+    const { text, charCount } = this.state;
     const { avatar } = this.props;
 
     return (
       <form className='new-tweet flex flex--column' onSubmit={this.handleTweet}>
         <div className='flex'>
           <Avatar avatarUrl={avatar} />
-          <input
-            value={text}
-            name='text'
-            placeholder="What's up?"
-            className='new-tweet__textbox'
-            onChange={this.handleInputChange}
-            type='text'
-          />
+          <div className='flex flex--column new-tweet__container'>
+            <input
+              value={text}
+              name='text'
+              placeholder="What's up?"
+              className='new-tweet__textbox'
+              onChange={this.handleInputChange}
+              type='text'
+            />
+            <div className='new-tweet__counter'>{charCount}/280</div>
+          </div>
         </div>
-        <button type='submit' className='new-tweet__button'>Tweet</button>
+        <button type='submit' className='new-tweet__button mt--xs'>Tweet</button>
       </form>
     )
   }
