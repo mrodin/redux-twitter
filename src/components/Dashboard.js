@@ -8,7 +8,7 @@ const Dashboard = (props) => {
 
   return (
     <div className='dashboard-container'>
-      <NewTweet />
+      <NewTweet placeholderText="What's happening?" />
       <ul>
         {tweetIds.map((id) => (
           <li key={id}>

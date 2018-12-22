@@ -37,7 +37,7 @@ export class NewTweet extends Component {
 
   render() {
     const { text, charCount } = this.state;
-    const { avatar } = this.props;
+    const { avatar, placeholderText } = this.props;
 
     return (
       <form className='new-tweet flex flex--column' onSubmit={this.handleTweet}>
@@ -47,7 +47,7 @@ export class NewTweet extends Component {
             <input
               value={text}
               name='text'
-              placeholder="What's up?"
+              placeholder={placeholderText}
               className='new-tweet__textbox'
               onChange={this.handleInputChange}
               type='text'

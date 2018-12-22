@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared';
 import Dashboard from './Dashboard';
 import LoadingBar from 'react-redux-loading';
+import TweetDetail from './TweetDetail';
 
 class App extends Component {
   componentDidMount() {
@@ -16,7 +17,9 @@ class App extends Component {
         <div className='app-container flex flex--center'>
           {this.props.loading === true
             ? null
-            : <Dashboard />}
+            : <TweetDetail id='8xf0y6ziyjabvozdd253nd' /> 
+            // : <Dashboard />
+          }
         </div>
       </Fragment>
     )
