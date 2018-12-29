@@ -17,8 +17,8 @@ class App extends Component {
         <div className='app-container flex flex--center'>
           {this.props.loading === true
             ? null
-            : <TweetDetail id='8xf0y6ziyjabvozdd253nd' /> 
-            // : <Dashboard />
+            // : <TweetDetail id='8xf0y6ziyjabvozdd253nd' /> 
+            : <Dashboard />
           }
         </div>
       </Fragment>
