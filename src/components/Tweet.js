@@ -1,20 +1,18 @@
 import React from 'react';
 import Avatar from './Avatar';
-import ReactModal from 'react-modal';
 import { MdFavorite, MdFavoriteBorder, MdReply } from 'react-icons/md';
 import { connect } from 'react-redux';
 import { formatTweet, formatDate } from '../utils/helpers';
 import { handleToggleLike } from '../actions/tweets';
-import { openModal, closeModal } from '../actions/modal';
 
 const Tweet = (props) => {
-  const { dispatch } = props;
   const { name, avatar, timestamp, text, hasLiked } = props.tweet;
 
   const handleLike = (e) => {
     e.preventDefault();
+    e.stopPropagation();
 
-    const { tweet, authedUser } = props;
+    const { dispatch, tweet, authedUser } = props;
 
     dispatch(handleToggleLike({
       id: tweet.id,
@@ -23,24 +21,8 @@ const Tweet = (props) => {
     }));
   }
 
-  const handleOpenModal = () => {
-    dispatch(openModal());
-  }
-
-  const handleCloseModal = () => {
-    dispatch(closeModal());
-  }
-
   return (
     <div className='tweet flex'>
-      <button onClick={handleOpenModal}>Trigger Modal</button>
-      <ReactModal
-        isOpen={props.showModal}
-        contentLabel="Minimal Modal Example"
-      >
-      VOKNO
-        <button onClick={handleCloseModal}>Close Modal</button>
-      </ReactModal>
       <Avatar avatarUrl={avatar} />
       <div className='tweet__body'>
         <ul>
@@ -61,13 +43,12 @@ const Tweet = (props) => {
   )
 }
 
-function mapStateToProps({ authedUser, showModal, users, tweets }, { id }) {
+function mapStateToProps({ authedUser, users, tweets }, { id }) {
   const tweet = tweets[id];
   const parentTweet = tweet ? tweets[tweet.replyingTo] : null;
 
   return {
     authedUser,
-    showModal,
     tweet: tweet
       ? formatTweet(tweet, users[tweet.author], authedUser, parentTweet)
       : null

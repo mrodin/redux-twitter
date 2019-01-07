@@ -9,6 +9,6 @@ export default combineReducers({
   authedUser,
   users,
   tweets,
-  showModal: modal,
+  modal,
   loadingBar: loadingBarReducer
 });

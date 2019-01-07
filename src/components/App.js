@@ -1,9 +1,12 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component, Fragment } from 'react';
+import Dashboard from './Dashboard';
+import Modal from './Modal';
+import ReactModal from 'react-modal';
+import LoadingBar from 'react-redux-loading';
 import { connect } from 'react-redux';
 import { handleInitialData } from '../actions/shared';
-import Dashboard from './Dashboard';
-import LoadingBar from 'react-redux-loading';
-import TweetDetail from './TweetDetail';
+
+ReactModal.setAppElement('#root');
 
 class App extends Component {
   componentDidMount() {
@@ -17,10 +20,10 @@ class App extends Component {
         <div className='app-container flex flex--center'>
           {this.props.loading === true
             ? null
-            // : <TweetDetail id='8xf0y6ziyjabvozdd253nd' /> 
             : <Dashboard />
           }
         </div>
+        <Modal tweetId='3km0v4hf1ps92ajf4z2ytg'/>
       </Fragment>
     )
   }

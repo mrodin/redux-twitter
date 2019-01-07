@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import NewTweet from './NewTweet';
+import ParentTweet from './ParentTweet';
 import Tweet from './Tweet';
 
 const Dashboard = (props) => {
@@ -12,7 +13,9 @@ const Dashboard = (props) => {
       <ul>
         {tweetIds.map((id) => (
           <li key={id}>
-            <Tweet id={id} />
+            <ParentTweet id={id}>
+              <Tweet id={id} />
+            </ParentTweet>
           </li>
         ))}
       </ul>
