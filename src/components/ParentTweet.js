@@ -3,18 +3,18 @@ import { openModal } from '../actions/modal';
 import { connect } from 'react-redux';
 
 const ParentTweet = (props) => {
-  const { dispatch } = props;
+  const { dispatch, id } = props;
 
   const handleOpenModal = (e) => {
     e.preventDefault();
     e.stopPropagation();
 
-    dispatch(openModal(props.id));
+    dispatch(openModal(id));
   }
 
   return (
     <div onClick={handleOpenModal}>
-      {props.children}
+      {React.cloneElement(props.children, { id: id })}
     </div>
   )
 }

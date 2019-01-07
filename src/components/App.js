@@ -23,7 +23,7 @@ class App extends Component {
             : <Dashboard />
           }
         </div>
-        <Modal tweetId='3km0v4hf1ps92ajf4z2ytg'/>
+        <Modal />
       </Fragment>
     )
   }

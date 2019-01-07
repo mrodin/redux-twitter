@@ -14,7 +14,7 @@ const Dashboard = (props) => {
         {tweetIds.map((id) => (
           <li key={id}>
             <ParentTweet id={id}>
-              <Tweet id={id} />
+              <Tweet />
             </ParentTweet>
           </li>
         ))}
