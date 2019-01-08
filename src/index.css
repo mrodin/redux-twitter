@@ -114,3 +114,33 @@ ul {
   padding: 0.5rem;
   border-radius: 20px;
 }
+
+/* TWEET DETAIL COMPONENT */
+
+.tweet-detail {
+  position: relative;
+  left: -50%;
+}
+
+/* MODAL */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.modal {
+  position: absolute;
+  border: 1px solid #ccc;
+  background: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  margin-top: 3rem;
+}

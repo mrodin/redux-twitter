@@ -1,8 +1,8 @@
 import React from 'react';
-import Tweet from './Tweet';
 import ReactModal from 'react-modal';
 import { connect } from 'react-redux';
 import { closeModal } from '../actions/modal';
+import TweetDetail from './TweetDetail';
 
 const Modal = (props) => {
   const { dispatch, modal } = props;
@@ -17,12 +17,14 @@ const Modal = (props) => {
   return (
     <ReactModal
       isOpen={modal.showModal}
-      contentLabel="Minimal Modal Example"
+      contentLabel="Tweet Detail Modal"
+      onRequestClose={handleCloseModal}
+      overlayClassName="overlay flex flex--center"
+      className="modal flex flex--center"
     >
       {modal.modalProps.tweetId &&
-        <Tweet id={modal.modalProps.tweetId} />
+        <TweetDetail id={modal.modalProps.tweetId} />
       }
-      <button onClick={handleCloseModal}>Close Modal</button>
     </ReactModal>
   )
 }
