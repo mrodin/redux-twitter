@@ -7,7 +7,7 @@ const TweetDetail = (props) => {
   return (
     <div className='dashboard-container'>
       <Tweet id={props.id} />
-      <NewTweet placeholderText='Tweet your reply' />
+      <NewTweet placeholderText='Tweet your reply' id={props.id} />
       <ul>
         {props.replies.map((id) => (
           <li key={id}>

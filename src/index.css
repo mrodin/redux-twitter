@@ -115,13 +115,6 @@ ul {
   border-radius: 20px;
 }
 
-/* TWEET DETAIL COMPONENT */
-
-.tweet-detail {
-  position: relative;
-  left: -50%;
-}
-
 /* MODAL */
 
 .overlay {
