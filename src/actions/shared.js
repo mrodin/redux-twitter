@@ -4,7 +4,7 @@ import { receiveUsers } from './users';
 import { receiveTweets } from './tweets';
 import { showLoading, hideLoading } from 'react-redux-loading';
 
-const AUTHED_USER = 'tylermcginnis';
+const AUTHED_USER = 'doc_mcdoggins';
 
 export function handleInitialData() {
   return (dispatch) => {
