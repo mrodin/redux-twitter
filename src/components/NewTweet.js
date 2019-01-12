@@ -31,7 +31,8 @@ export class NewTweet extends Component {
     dispatch(handleAddTweet(text, id));
 
     this.setState(() => ({
-      text: ''
+      text: '',
+      charCount: 0
     }));
   }
 

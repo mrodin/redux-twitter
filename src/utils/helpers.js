@@ -1,15 +1,19 @@
 export function formatDate (timestamp) {
   const d = new Date(timestamp)
   const time = d.toLocaleTimeString('en-US')
-  return time.substr(0, 5) + time.slice(-2) + ' | ' + d.toLocaleDateString()
+  
+  const options = { day: 'numeric', month: 'short', year: 'numeric' };
+  return time.substr(0, 4) + ' ' + time.slice(-2) + ' - ' + d.toLocaleDateString('en-US', options)
 }
 
 export function formatTweet (tweet, author, authedUser, parentTweet) {
   const { id, likes, replies, text, timestamp } = tweet
   const { name, avatarURL } = author
+  const uid = author.id
 
   return {
     name,
+    uid,
     id,
     timestamp,
     text,

@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
 }
 
 ul {
@@ -65,6 +66,23 @@ ul {
 
 .tweet__username {
   font-weight: bold;
+}
+
+.tweet__info {
+  color: #657786;
+}
+
+.tweet__info li {
+  margin-left: 0.4rem;
+}
+
+.tweet__control {
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.tweet__counter {
+  margin-left: 0.5rem;
 }
 
 .tweet__button {
