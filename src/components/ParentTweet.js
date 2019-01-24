@@ -13,7 +13,7 @@ const ParentTweet = (props) => {
   }
 
   return (
-    <div onClick={handleOpenModal}>
+    <div className='parent-tweet' onClick={handleOpenModal}>
       {React.cloneElement(props.children, { id: id })}
     </div>
   )

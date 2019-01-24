@@ -52,10 +52,20 @@ ul {
   border-radius: 50%;
 }
 
+/* PARENT TWEET COMPONENT */
+
+.parent-tweet {
+  background-color: #ffffff;
+}
+
+.parent-tweet:hover {
+  cursor: pointer;
+  background-color: #f5f8fa;
+}
+
 /* TWEET COMPONENT */
 
 .tweet {
-  background-color: #ffffff;
   border-bottom: 1px solid #ebebeb;
   padding: 1rem;
 }
