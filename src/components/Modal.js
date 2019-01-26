@@ -7,9 +7,12 @@ import TweetDetail from './TweetDetail';
 const Modal = (props) => {
   const { dispatch, modal } = props;
 
+  const disableScroll = () => { document.body.style.overflow = 'hidden' }
+
   const handleCloseModal = (e) => {
     e.preventDefault();
     e.stopPropagation();
+    document.body.style.overflow = 'initial';
 
     dispatch(closeModal());
   }
@@ -17,6 +20,7 @@ const Modal = (props) => {
   return (
     <ReactModal
       isOpen={modal.showModal}
+      onAfterOpen={disableScroll}
       contentLabel="Tweet Detail Modal"
       onRequestClose={handleCloseModal}
       overlayClassName="overlay flex flex--center"

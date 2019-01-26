@@ -24,9 +24,10 @@ const Dashboard = (props) => {
 }
 
 function mapStateToProps({ tweets }) {
+  const parentTweets = Object.keys(tweets).filter((tweet) => tweets[tweet].replyingTo === null);
+    
   return {
-    tweetIds: Object.keys(tweets)
-      .sort((a, b) => tweets[b].timestamp - tweets[a].timestamp)
+    tweetIds: parentTweets.sort((a, b) => tweets[b].timestamp - tweets[a].timestamp)
   }
 }
 
